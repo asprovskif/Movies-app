@@ -1,0 +1,112 @@
+<% include partials/header %>
+
+
+<div class="container">
+    <h1>Search for a movie</h1>
+
+    <form action="/movies" method="GET">
+        <input type="text" placeholder="Search for a movie" name="search">
+        <input type="submit">
+    </form>
+</div>
+<hr>
+
+<form action='/movies' method="POST">
+<div class="table-responsive">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Poster</th>
+                <th>Movie</th>
+                <th>Genre</th>
+                <th>Plot</th>
+                <th>Director</th>
+                <th>Writer</th>
+                <th>Actors</th>
+                <th>Rating</th>
+                <th>Votes</th>
+                <th>Runtime</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <input value="<%= data['Poster']%>" hidden name="poster">
+                <td><img src="<%= data['Poster']%>" width="50px" height="50px"></td>
+                <td>                    
+                    <p>
+                        <%= data['Title'] %>
+                    </p>
+                    <input value="<%= data['Title'] %>" name="title" hidden>
+                </td>
+                <td>
+                        <p>
+                             <%= data['Genre'] %>
+                        </p>
+                    <input value="<%= data['Genre'] %>" name="genre" hidden>
+                </td>
+                <td>
+                        <p>
+                            <%= data['Plot'] %>
+                        </p>
+                    <input value="<%= data['Plot'] %>" name="plot" hidden>
+                </td>
+                <td>
+                        <p>
+                            <%= data['Director'] %>
+                        </p>
+                    <input value="<%= data['Director'] %>" name="director" hidden>
+                </td>
+                <td>
+                        <p>
+                            <%= data['Writer'] %>
+                        </p>
+                    <input value="<%= data['Writer'] %>" name="writer" hidden>
+                </td>
+                <td>
+                        <p>
+                            <%= data['Actors'] %>
+                        </p>
+                    <input value="<%= data['Actors'] %>" name="actors" hidden>    
+                </td>
+                <td>
+                        <p>
+                            <%= data['imdbRating'] %>
+                        </p>
+                    <input value="<%= data['imdbRating'] %>" name="ratings" hidden>
+                </td>
+                <td>
+                        <p>
+                            <%= data['imdbVotes'] %>
+                        </p>
+                    <input value="<%= data['imdbVotes'] %>" name="votes" hidden>
+                </td>
+                <td>
+                        <p>                     
+                            <%= data['Runtime'] %>
+                        </p>
+                    <input value="<%= data['Runtime'] %>" name="runtime" hidden>
+                </td>
+
+
+                <td>
+                        
+                        <button class="btn btn-lg btn-primary center-block" submit>Add movie</button>
+                        
+                    
+
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+</form>
+
+<% include partials/footer %>

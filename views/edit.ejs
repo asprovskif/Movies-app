@@ -1,0 +1,43 @@
+<% include partials/header %>
+
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center;">Edit <%= movie.title %></h1>
+        <div style="width:30%; margin: 30px auto;">
+            <form action="/movies/<%= movie._id %>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" value="<%= movie.poster%>" name="movie[poster]"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" value="<%= movie.genre%>" name="movie[genre]"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" value="<%= movie.director%>" name="movie[director]"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" value="<%= movie.actors%>" name="movie[actors]"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" value="<%= movie.ratings%>" name="movie[ratings]" min="0.01" step="0.01"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" value="<%= movie.votes%>" name="movie[votes]"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" value="<%= movie.runtime%>" name="movie[runtime]"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text-area" value="<%= movie.plot%>" name="movie[plot]"></input>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary center-block">Submit</button>
+                </div>
+
+            </form>
+            
+        </div>
+
+    </div>
+</div>
+
+<% include partials/footer %>

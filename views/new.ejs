@@ -1,0 +1,50 @@
+<% include partials/header %>
+
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center;">Add a new movie</h1>
+        <div style="width:30%; margin: 30px auto;">
+            <form action="/movies" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Title" name="title" >
+                </input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="imageURL" name="poster"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="genre" name="genre"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="director" name="director"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="writer" name="writer"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="actors" name="actors"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" placeholder="rating" name="ratings" min="0.01" step="0.01"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control"  placeholder="votes" name="votes"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="runtime" name="runtime"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text-area" placeholder="short-plot" name="plot"></input>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary center-block">Submit</button>
+                </div>
+
+            </form>
+            <a href="/movies">Go Back</a>
+        </div>
+
+    </div>
+</div>
+
+<% include partials/footer %>

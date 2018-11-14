@@ -1,0 +1,81 @@
+<% include partials/header %>
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>MoviePicker</h1>
+            
+            <p>
+                <a class="btn btn-primary btn-lg" href="/movies">Add a new movie</a>
+            </p>
+        </div>
+    </header>
+
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <div class="col-lg-12">
+            <a class="btn btn-primary pull-right" id="button">Load More</a>
+        </div>
+
+
+<div class="table-responsive" id="firstTable">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Poster</th>
+                <th>Movie</th>
+                <th>Genre</th>
+                <th>Plot</th>
+                <th>Director</th>
+                <th>Actors</th>
+                <th>Rating</th>
+                <th>Votes</th>
+                <th>Runtime</th>
+                <th>Action</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            <% movies.forEach(function(movie){ %>
+            <tr>
+                <td><img src="<%= movie.poster%>" width="50px" height="50px"></td>
+                <td>
+                    <%= movie.title %>
+                </td>
+                <td>
+                    <%= movie.genre %>
+                </td>
+                <td>
+                    <%= movie.plot %>
+                </td>
+                <td>
+                    <%= movie.director %>
+                </td>
+                <td>
+                    <%= movie.actors %>
+                </td>
+                <td>
+                    <%= movie.ratings %>
+                </td>
+                <td>
+                    <%= movie.votes %>
+                </td>
+                <td>
+                    <%= movie.runtime %>
+                </td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href="/movies/<%= movie._id%>/edit">Edit</a>
+                    <form action="/movies/<%= movie._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                    
+                    </form>
+                </td>
+
+
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+    </div>
+</div>
+<% include partials/footer %>
